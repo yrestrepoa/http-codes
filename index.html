@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Respuestas HTTP</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h1 class="tittle">Códigos HTTP</h1>
+                <div class="container">
+                    <!--RESPUESTAS INFORMATIVAS-->
+                    <div>
+                        <h1 class="tittle">Respuestas Informativas</h1>
+                        <p class="code code-informative" data-info="informacion-1">100 Continue</p>
+                        <div class="info" id="informacion-1">
+                            <p>Esta respuesta provisional indica que todo hasta ahora está bien y que el cliente debe continuar con la solicitud o ignorarla si ya está terminada.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-informative" data-info="informacion-2">101 Swithcing Protocol</p>
+                        <div class="info" id="informacion-2">
+                            <p>Este código se envía en respuesta a un encabezado de solicitud Upgrade (en-US) por el cliente e indica que el servidor acepta el cambio de protocolo propuesto por el agente de usuario.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-informative" data-info="informacion-3">102 Processing (en-US)</p>
+                        <div class="info" id="informacion-3">
+                            <p>Este código indica que el servidor ha recibido la solicitud y aún se encuentra procesandola, por lo que no hay respuesta disponible.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-informative" data-info="informacion-4">103 Early Hints (en-US)</p>
+                        <div class="info" id="informacion-4">
+                            <p>Este código de estado está pensado principalmente para ser usado con el encabezado Link, permitiendo que el agente de usuario empiece a pre-cargar (en-US) recursos mientras el servidor prepara una respuesta.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-informative" data-info="informacion-5">100 Continue</p>
+                        <div class="info" id="informacion-5">
+                            <p>La solicitud ha tenido éxito. El significado de un éxito varía dependiendo del método HTTP.</p>
+                        </div>
+                    </div>
+
+                    <!--RESPUESTAS SATISFACTORIAS-->
+
+                    <h1 class="tittle">Respuestas Satisfactorias</h1>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-6">201 Created</p>
+                        <div class="info" id="informacion-6">
+                            <p>La solicitud ha tenido éxito y se ha creado un nuevo recurso como resultado de ello. Ésta es típicamente la respuesta enviada después de una petición PUT.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-7">202 Accepted</p>
+                        <div class="info" id="informacion-7">
+                            <p>La solicitud se ha recibido, pero aún no se ha actuado. Es una petición "sin compromiso", lo que significa que no hay manera en HTTP que permite enviar una respuesta asíncrona que indique el resultado del procesamiento de la solicitud. Está pensado para los casos en que otro proceso o servidor maneja la solicitud, o para el procesamiento por lotes.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-7">203 Non-Authoritative Information</p>
+                        <div class="info" id="informacion-7">
+                            <p>La petición se ha completado con éxito, pero su contenido no se ha obtenido de la fuente originalmente solicitada, sino que se recoge de una copia local o de un tercero. Excepto esta condición, se debe preferir una respuesta de 200 OK en lugar de esta respuesta.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-8">204 No Content (en-US)</p>
+                        <div class="info" id="informacion-8">
+                            <p>La petición se ha completado con éxito pero su respuesta no tiene ningún contenido, aunque los encabezados pueden ser útiles. El agente de usuario puede actualizar sus encabezados en caché para este recurso con los nuevos valores.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-9">205 Reset Content (en-US)</p>
+                        <div class="info" id="informacion-9">
+                            <p>La petición se ha completado con éxito, pero su respuesta no tiene contenidos y además, el agente de usuario tiene que inicializar la página desde la que se realizó la petición, este código es útil por ejemplo para páginas con formularios cuyo contenido debe borrarse después de que el usuario lo envíe.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-10">206 Partial Content</p>
+                        <div class="info" id="informacion-10">
+                            <p>La petición servirá parcialmente el contenido solicitado. Esta característica es utilizada por herramientas de descarga como wget para continuar la transferencia de descargas anteriormente interrumpidas, o para dividir una descarga y procesar las partes simultáneamente.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-11">207 Multi-Status (en-US) (WebDAV (en-US))</p>
+                        <div class="info" id="informacion-11">
+                            <p>Una respuesta Multi-Estado transmite información sobre varios recursos en situaciones en las que varios códigos de estado podrían ser apropiados. El cuerpo de la petición es un mensaje XML.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-12">207 Multi-Status (en-US) (WebDAV (en-US))</p>
+                        <div class="info" id="informacion-12">
+                            <p>Una respuesta Multi-Estado transmite información sobre varios recursos en situaciones en las que varios códigos de estado podrían ser apropiados. El cuerpo de la petición es un mensaje XML.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-13">208 Multi-Status (en-US) (WebDAV (en-US))</p>
+                        <div class="info" id="informacion-13">
+                            <p>Una respuesta Multi-Estado transmite información sobre varios recursos en situaciones en las que varios códigos de estado podrían ser apropiados. El cuerpo de la petición es un mensaje XML.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-satisfying" data-info="informacion-14">226 IM Used (en-US) (HTTP Delta encoding)</p>
+                        <div class="info" id="informacion-14">
+                            <p>El servidor ha cumplido una petición GET para el recurso y la respuesta es una representación del resultado de una o más manipulaciones de instancia aplicadas a la instancia actual.</p>
+                        </div>
+                    </div>
+
+                    <!-- REDIRECCIONES -->
+                    <div>
+                        <h1 class="tittle">Redirecciones</h1>
+                        <p class="code code-redirects" data-info="informacion-15">300 Multiple Choice (en-US)</p>
+                        <div class="info" id="informacion-15">
+                            <p>Esta solicitud tiene más de una posible respuesta. User-Agent o el usuario debe escoger uno de ellos. No hay forma estandarizada de seleccionar una de las respuestas.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-redirects" data-info="informacion-16">301 Moved Permanently (en-US)</p>
+                        <div class="info" id="informacion-16">
+                            <p>Este código de respuesta significa que la URI del recurso solicitado ha sido cambiado. Probablemente una nueva URI sea devuelta en la respuesta.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-redirects" data-info="informacion-17">303 See Other (en-US)</p>
+                        <div class="info" id="informacion-17">
+                            <p>El servidor envía esta respuesta para dirigir al cliente a un nuevo recurso solicitado a otra dirección usando una petición GET.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-redirects" data-info="informacion-18">304 Not Modified</p>
+                        <div class="info" id="informacion-18">
+                            <p>Esta es usada para propósitos de "caché". Le indica al cliente que la respuesta no ha sido modificada. Entonces, el cliente puede continuar usando la misma versión almacenada en su caché.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-redirects" data-info="informacion-19">305 Use Proxy</p>
+                        <div class="info" id="informacion-19">
+                            <p>Fue definida en una versión previa de la especificación del protocolo HTTP para indicar que una respuesta solicitada debe ser accedida desde un proxy. Ha quedado obsoleta debido a preocupaciones de seguridad correspondientes a la configuración de un proxy.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-redirects" data-info="informacion-20">306 unused</p>
+                        <div class="info" id="informacion-20">
+                            <p>Este código de respuesta ya no es usado más. Actualmente se encuentra reservado. Fue usado en previas versiones de la especificación HTTP1.1.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-redirects" data-info="informacion-22">307 Temporary Redirect (en-US)</p>
+                        <div class="info" id="informacion-22">
+                            <p>El servidor envía esta respuesta para dirigir al cliente a obtener el recurso solicitado a otra URI con el mismo método que se usó la petición anterior. Tiene la misma semántica que el código de respuesta HTTP 302 Found, con la excepción de que el agente usuario no debe cambiar el método HTTP usado: si un POST fue usado en la primera petición, otro POST debe ser usado en la segunda petición.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-redirects" data-info="informacion-23">308 Permanent Redirect (en-US)</p>
+                        <div class="info" id="informacion-23">
+                            <p>Significa que el recurso ahora se encuentra permanentemente en otra URI, especificada por la respuesta de encabezado HTTP Location:. Tiene la misma semántica que el código de respuesta HTTP 301 Moved Permanently, con la excepción de que el agente usuario no debe cambiar el método HTTP usado: si un POST fue usado en la primera petición, otro POST debe ser usado en la segunda petición.</p>
+                        </div>
+                    </div>
+                
+                    <!--ERRORES DEL CLIENTE -->
+
+                    <h1 class="tittle">Errores del Cliente</h1>
+                    <div>
+                        <p class="code code-client" data-info="informacion-25">400 Bad Request</p>
+                        <div class="info" id="informacion-25">
+                            <p>Esta respuesta significa que el servidor no pudo interpretar la solicitud dada una sintaxis inválida.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-26">401 Unauthorized</p>
+                        <div class="info" id="informacion-26">
+                            <p>Es necesario autenticar para obtener la respuesta solicitada. Esta es similar a 403, pero en este caso, la autenticación es posible.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-27">402 Payment Required</p>
+                        <div class="info" id="informacion-27">
+                            <p>Este código de respuesta está reservado para futuros usos. El objetivo inicial de crear este código fue para ser utilizado en sistemas digitales de pagos. Sin embargo, no está siendo usado actualmente.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-28">403 Forbidden</p>
+                        <div class="info" id="informacion-28">
+                            <p>El cliente no posee los permisos necesarios para cierto contenido, por lo que el servidor está rechazando otorgar una respuesta apropiada.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-29">404 Not Found</p>
+                        <div class="info" id="informacion-29">
+                            <p>El servidor no pudo encontrar el contenido solicitado. Este código de respuesta es uno de los más famosos dada su alta ocurrencia en la web</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-30">405 Method Not Allowed</p>
+                        <div class="info" id="informacion-30">
+                            <p>El método solicitado es conocido por el servidor pero ha sido deshabilitado y no puede ser utilizado. Los dos métodos obligatorios, GET y HEAD, nunca deben ser deshabilitados y no deberían retornar este código de error.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-31">406 Not Acceptable (en-US)</p>
+                        <div class="info" id="informacion-31">
+                            <p>Esta respuesta es enviada cuando el servidor, después de aplicar una negociación de contenido servidor-impulsado (en-US), no encuentra ningún contenido seguido por la criteria dada por el usuario.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-32">407 Proxy Authentication Required (en-US)</p>
+                        <div class="info" id="informacion-32">
+                            <p>Esto es similar al código 401, pero la autenticación debe estar hecha a partir de un proxy.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-33">408 Request Timeout</p>
+                        <div class="info" id="informacion-33">
+                            <p>Esta respuesta es enviada en una conexión inactiva en algunos servidores, incluso sin alguna petición previa por el cliente. Significa que el servidor quiere desconectar esta conexión sin usar. Esta respuesta es muy usada desde algunos navegadores, como Chrome, Firefox 27+, o IE9, usa mecanismos de pre-conexión HTTP para acelerar la navegación. También hay que tener en cuenta que algunos servidores simplemente desconecta la conexión sin enviar este mensaje.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-34">409 Conflict (en-US)</p>
+                        <div class="info" id="informacion-34">
+                            <p>Esta respuesta puede ser enviada cuando una petición tiene conflicto con el estado actual del servidor.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-34">410 Gone (en-US)</p>
+                        <div class="info" id="informacion-34">
+                            <p>Esta respuesta puede ser enviada cuando el contenido solicitado ha sido borrado del servidor.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-35">411 Length Required (en-US)</p>
+                        <div class="info" id="informacion-35">
+                            <p>El servidor rechaza la petición porque el campo de encabezado Content-Length no esta definido y el servidor lo requiere.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-36">412 Precondition Failed (en-US)</p>
+                        <div class="info" id="informacion-36">
+                            <p>El cliente ha indicado pre-condiciones en sus encabezados la cual el servidor no cumple.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-37">413 Payload Too Large</p>
+                        <div class="info" id="informacion-37">
+                            <p>La entidad de petición es más larga que los límites definidos por el servidor; el servidor puede cerrar la conexión o retornar un campo de encabezado Retry-After.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-38">414 URI Too Long (en-US)</p>
+                        <div class="info" id="informacion-38">
+                            <p>La URI solicitada por el cliente es más larga de lo que el servidor está dispuesto a interpretar.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-39">415 Unsupported Media Type (en-US)</p>
+                        <div class="info" id="informacion-39">
+                            <p>El formato multimedia de los datos solicitados no está soportado por el servidor, por lo cual el servidor rechaza la solicitud.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-40">416 Requested Range Not Satisfiable (en-US)</p>
+                        <div class="info" id="informacion-40">
+                            <p>El rango especificado por el campo de encabezado Range en la solicitud no cumple; es posible que el rango está fuera del tamaño de los datos objetivo del URI.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-41">416 Requested Range Not Satisfiable (en-US)</p>
+                        <div class="info" id="informacion-41">
+                            <p>El rango especificado por el campo de encabezado Range en la solicitud no cumple; es posible que el rango está fuera del tamaño de los datos objetivo del URI.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-42">417 Expectation Failed (en-US)</p>
+                        <div class="info" id="informacion-42">
+                            <p>Significa que la expectativa indicada por el campo de encabezado Expect solicitada no puede ser cumplida por el servidor.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-43">418 I'm a teapot</p>
+                        <div class="info" id="informacion-43">
+                            <p>El servidor se rehúsa a intentar hacer café con una tetera.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-43">421 Misdirected Request (en-US)</p>
+                        <div class="info" id="informacion-44">
+                            <p>La petición fue dirigida a un servidor que no es capaz de producir una respuesta. Esto puede ser enviado por un servidor que no está configurado para producir respuestas por la combinación del esquema y la autoridad que están incluidos en la URI solicitada
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-45">422 Unprocessable Entity (en-US) (WebDAV (en-US))</p>
+                        <div class="info" id="informacion-45">
+                            <p>La petición estaba bien formada pero no se pudo seguir debido a errores de semántica.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-46">423 Locked (en-US) (WebDAV (en-US))</p>
+                        <div class="info" id="informacion-45">
+                            <p>El recurso que está siendo accedido está bloqueado.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-47">424 Failed Dependency (en-US) (WebDAV (en-US))</p>
+                        <div class="info" id="informacion-47">
+                            <p>La petición falló debido a una falla de una petición previa.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-48">426 Upgrade Required (en-US)</p>
+                        <div class="info" id="informacion-48">
+                            <p>El servidor se rehúsa a aplicar la solicitud usando el protocolo actual pero puede estar dispuesto a hacerlo después que el cliente se actualice a un protocolo diferente. El servidor envía un encabezado Upgrade en una respuesta para indicar los protocolos requeridos.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-48">428 Precondition Required (en-US)</p>
+                        <div class="info" id="informacion-48">
+                            <p>El servidor origen requiere que la solicitud sea condicional. Tiene la intención de prevenir problemas de 'actualización perdida', donde un cliente OBTIENE un estado del recurso, lo modifica, y lo PONE devuelta al servidor, cuando mientras un tercero ha modificado el estado del servidor, llevando a un conflicto.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-49">429 Too Many Requests (en-US)</p>
+                        <div class="info" id="informacion-49">
+                            <p>El usuario ha enviado demasiadas solicitudes en un periodo de tiempo dado.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-50">431 Request Header Fields Too Large (en-US)</p>
+                        <div class="info" id="informacion-50">
+                            <p>El servidor no está dispuesto a procesar la solicitud porque los campos de encabezado son demasiado largos. La solicitud PUEDE volver a subirse después de reducir el tamaño de los campos de encabezado solicitados.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-client" data-info="informacion-51">451 Unavailable For Legal Reasons (en-US)</p>
+                        <div class="info" id="informacion-51">
+                            <p>El usuario solicita un recurso ilegal, como alguna página web censurada por algún gobierno.</p>
+                        </div>
+                    </div>
+
+                    <!--ERRORES DE SERVIDOR-->
+
+                    <h1 class="tittle">Errores del Servidor</h1>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-51">500 Internal Server Error</p>
+                        <div class="info" id="informacion-51">
+                            <p>El servidor ha encontrado una situación que no sabe cómo manejarla.</p>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <p class="code code-server" data-info="informacion-52">502 Bad Gateway</p>
+                        <div class="info" id="informacion-52">
+                            <p>Esta respuesta de error significa que el servidor, mientras trabaja como una puerta de enlace para obtener una respuesta necesaria para manejar la petición, obtuvo una respuesta inválida.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-53">503 Service Unavailable</p>
+                        <div class="info" id="informacion-53">
+                            <p>El servidor no está listo para manejar la petición. Causas comunes puede ser que el servidor está caído por mantenimiento o está sobrecargado. Hay que tomar en cuenta que junto con esta respuesta, una página usuario-amigable explicando el problema debe ser enviada. Estas respuestas deben ser usadas para condiciones temporales y el encabezado HTTP Retry-After: debería, si es posible, contener el tiempo estimado antes de la recuperación del servicio. El webmaster debe también cuidar los encabezados relacionados al caché que son enviados junto a esta respuesta, ya que estas respuestas de condición temporal deben usualmente no estar en el caché.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-54">504 Gateway Timeout</p>
+                        <div class="info" id="informacion-54">
+                            <p>Esta respuesta de error es dada cuando el servidor está actuando como una puerta de enlace y no puede obtener una respuesta a tiempo.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-55">505 HTTP Version Not Supported</p>
+                        <div class="info" id="informacion-55">
+                            <p>La versión de HTTP usada en la petición no está soportada por el servidor.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-56">506 Variant Also Negotiates (en-US)</p>
+                        <div class="info" id="informacion-56">
+                            <p>El servidor tiene un error de configuración interna: negociación de contenido transparente para la petición resulta en una referencia circular.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-57">507 Insufficient Storage (en-US)</p>
+                        <div class="info" id="informacion-57">
+                            <p>El servidor tiene un error de configuración interna: la variable de recurso escogida está configurada para acoplar la negociación de contenido transparente misma, y no es por lo tanto un punto final adecuado para el proceso de negociación.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-58">508 Loop Detected (en-US) (WebDAV (en-US))</p>
+                        <div class="info" id="informacion-58">
+                            <p>El servidor detectó un ciclo infinito mientras procesaba la solicitud.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-59">510 Not Extended (en-US)</p>
+                        <div class="info" id="informacion-59">
+                            <p>Extensiones adicionales para la solicitud son requeridas para que el servidor las cumpla.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="code code-server" data-info="informacion-60">511 Network Authentication Required (en-US)</p>
+                        <div class="info" id="informacion-60">
+                            <p>El código de estado 511 indica que el cliente necesita autenticar para obtener acceso a la red.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+        </section>
+        <footer>
+            <p>Información obtenida de <cite><a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status" target="_blank" rel="noopener noreferrer">Mozilla Corporation’s</a></cite></p>
+        </footer>
+    </main>
+    <script>
+        // JavaScript para mostrar/ocultar la información al pasar el ratón
+        document.querySelectorAll('.code').forEach(function(codeElement) {
+            codeElement.addEventListener('mouseover', function() {
+                var infoId = this.getAttribute('data-info');
+                var infoElement = document.getElementById(infoId);
+                infoElement.style.display = 'block';
+            });
+
+            codeElement.addEventListener('mouseout', function() {
+                var infoId = this.getAttribute('data-info');
+                var infoElement = document.getElementById(infoId);
+                infoElement.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
