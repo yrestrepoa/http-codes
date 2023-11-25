@@ -30,8 +30,6 @@ section .tittle{
     margin: 10px;
     border: 2px solid #DFDFDD;
     color: #FFFFFF;
-    text-align: center;
-    align-items: center;
 }
 .code-satisfying{
     background-color: #34C143;
